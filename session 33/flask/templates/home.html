@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Home Page</title>
+</head>
+<body>
+	<h1> Welcome to my website</h1>
+	<hr>
+
+	<h2> Introduction : </h2>
+	
+	{% for k,v in intro.items() %}
+		<ul>
+			<li> <b> {{ k }} -</b>  {{ v }}  </li>
+		</ul>
+	{% endfor %}
+
+	{% if age>=18 %}
+		<b> You're eligible to vote. You're age is {{age }} </b>
+	{% else %}
+		<b> You're a kid</b>
+	{% endif %}
+
+	<br>
+	<img src="{{  dog_img }}" height="400" width="400">
+	
+</body>
+</html>
