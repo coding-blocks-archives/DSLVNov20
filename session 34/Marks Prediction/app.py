@@ -1,18 +1,19 @@
 from flask import Flask, render_template, request
-import pickle
+import joblib
 # master variable
-app = Flask("__main__")
+app = Flask(__name__)
 
 
 #routes --> different request me karna kya hai
 
-with open("model.pkl", 'rb') as f:
-	model = pickle.load(f)
+# with open("model.pkl", 'rb') as f:
+# 	model = pickle.load(f)
 
+model = joblib.load("model.pkl")
 
 @app.route("/")
 def kuch_bhi():
-	return render_template("home.html"  )
+	return render_template("home.html" )
 
 
 # Marks prediction
